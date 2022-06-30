@@ -17,7 +17,7 @@ const initialState = [
     mouse: 2,
     weight: '2',
     status: false,
-    available: 0,
+    available: 1,
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ const initialState = [
     mouse: 5,
     weight: '5',
     status: false,
-    available: 2,
+    available: 0,
   },
 ];
 
