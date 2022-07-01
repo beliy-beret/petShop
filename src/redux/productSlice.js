@@ -7,7 +7,6 @@ const initialState = [
     serving: 10,
     mouse: 1,
     weight: '0,5',
-    status: true,
     available: 2,
   },
   {
@@ -16,7 +15,6 @@ const initialState = [
     serving: 40,
     mouse: 2,
     weight: '2',
-    status: false,
     available: 1,
   },
   {
@@ -25,7 +23,6 @@ const initialState = [
     serving: 100,
     mouse: 5,
     weight: '5',
-    status: false,
     available: 0,
   },
 ];

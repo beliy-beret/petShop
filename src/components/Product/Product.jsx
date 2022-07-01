@@ -1,11 +1,10 @@
 import style from './product.module.css';
-import { useDispatch } from 'react-redux';
-import { changeStatus } from '../../redux/productSlice';
 import StatusText from './StatusText';
+import { useState } from 'react';
 
-const Product = ({ id, taste, servings, mouse, weight, status, available }) => {
-  const dispatch = useDispatch();
-  const onChangeStatus = () => dispatch(changeStatus(id));
+const Product = ({ taste, servings, mouse, weight, available }) => {
+  const [status, statusHandle] = useState(false);
+  const onChangeStatus = () => statusHandle(!status);
   const alertUser = () => {
     return alert('Продукта нет в наличии');
   };
