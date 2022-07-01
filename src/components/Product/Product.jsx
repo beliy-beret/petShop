@@ -1,10 +1,17 @@
 import style from './product.module.css';
 import StatusText from './StatusText';
 import { useState } from 'react';
+import CardTitle from './CardTitle';
 
 const Product = ({ taste, servings, mouse, weight, available }) => {
-  const [status, statusHandle] = useState(false);
-  const onChangeStatus = () => statusHandle(!status);
+  const [isVisited, isVisitedHandle] = useState(false);
+  const [isChecked, isCheckedHandle] = useState(false);
+  const isCheckedToggle = () => isCheckedHandle(!isChecked);
+  const isVisitedToggle = () => {
+    if (isChecked) {
+      isVisitedHandle(true);
+    }
+  };
   const alertUser = () => {
     return alert('Продукта нет в наличии');
   };
@@ -23,13 +30,13 @@ const Product = ({ taste, servings, mouse, weight, available }) => {
 
   return (
     <article className={style.product}>
-      <input type={'checkbox'} onChange={onChangeStatus} checked={status} />
+      <input type={'checkbox'} onChange={isCheckedToggle} checked={isChecked} />
       <div
         className={available === 0 ? style.disabled : style.wrapper}
-        onClick={available === 0 ? alertUser : onChangeStatus}
+        onClick={available === 0 ? alertUser : isCheckedToggle}
+        onMouseLeave={isVisitedToggle}
       >
-        <div className={style.cardTitle}>Сказочное заморское яство</div>
-        <div className={style.cardTitleHover}>Котэ не одобряет?</div>
+        <CardTitle isVisited={isVisited} />
         <h1 className={style.title}>Нямушка</h1>
         <div className={style.subtitle}>
           <span>{taste}</span>
@@ -46,10 +53,10 @@ const Product = ({ taste, servings, mouse, weight, available }) => {
         </div>
       </div>
       <StatusText
-        status={status}
+        isChecked={isChecked}
         taste={taste}
         available={available}
-        onChangeStatus={onChangeStatus}
+        isCheckedToggle={isCheckedToggle}
       />
     </article>
   );

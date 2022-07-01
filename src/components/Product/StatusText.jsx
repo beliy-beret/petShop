@@ -1,6 +1,6 @@
 import style from './product.module.css';
 
-const StatusText = ({ status, taste, available, onChangeStatus }) => {
+const StatusText = ({ isChecked, taste, available, isCheckedToggle }) => {
   let checkText = '';
   switch (taste) {
     case 'с фуа-гра':
@@ -18,7 +18,7 @@ const StatusText = ({ status, taste, available, onChangeStatus }) => {
 
   const defaultStatus = (
     <div className={style.buy}>
-      Чего сидишь? Порадуй котэ, <span onClick={onChangeStatus}>купи.</span>
+      Чего сидишь? Порадуй котэ, <span onClick={isCheckedToggle}>купи.</span>
     </div>
   );
 
@@ -31,7 +31,7 @@ const StatusText = ({ status, taste, available, onChangeStatus }) => {
   const getStatusText = () => {
     if (available === 0) {
       return disabledStatus;
-    } else if (status) {
+    } else if (isChecked) {
       return checkedStatus;
     } else {
       return defaultStatus;

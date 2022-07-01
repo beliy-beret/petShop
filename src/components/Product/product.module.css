@@ -155,22 +155,23 @@
 }
 .product input:checked + .wrapper>.weight {
     background-color: #D91667;
-
-
-
-
 }
-/*.product input:checked + .wrapper:hover>.cardTitleHover {
-    display: block;    
-}
-.product input:checked + .wrapper:hover>.cardTitle {
-    display: none;    
-}
-*/
-
 
 .cardTitleHover {    
-    color: #E62E7A;    
+    color: #E62E7A;
+    position: absolute;
+    width: 70%;
+    top: 4%;
+    left: 15%;
+    z-index: 2;
+    background-color: #FFFFFF;
+    line-height: 150%;
+    opacity: 0;
+    display: none;    
+}
+.product input:checked + .wrapper:hover>.cardTitleHover {
+    opacity: 1;
+    transition: all 300ms ease-in-out;    
 }
 
 
