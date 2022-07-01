@@ -1,3 +1,4 @@
+/*              Default style               */
 .product {
     display: flex;
     flex-direction: column;
@@ -9,21 +10,6 @@
 }
 .product input {
     display: none;
-}
-.product input:checked + .wrapper {
-    border-color: #D91667;
-}
-.product input:checked + .wrapper::before {
-    border-left: 5px solid #D91667;
-}
-.product input:checked + .wrapper>.weight {
-    background-color: #D91667;
-}
-.product input:checked + .wrapper:hover>.cardTitleHover {
-    display: block;    
-}
-.product input:checked + .wrapper:hover>.cardTitle {
-    display: none;    
 }
 
 .wrapper {
@@ -51,11 +37,6 @@
     left: 3%;
     border-left: 5px solid #1698D9;
     transform: rotate(45deg);
-}
-
-.cardTitleHover {
-    display: none;
-    color: #E62E7A;    
 }
 
 .title, .subtitle {
@@ -112,6 +93,8 @@
     text-decoration: dashed underline;
 }
 
+/*               If product is not available                 */
+
 .notAvailable {
     margin-top: 14px;
     font-weight: 400;
@@ -161,3 +144,34 @@
 .disabled>.weight {
     background-color: black;
 }
+
+/*              If product checked               */
+
+.product input:checked + .wrapper {
+    border-color: #D91667;
+}
+.product input:checked + .wrapper::before {
+    border-left: 5px solid #D91667;
+}
+.product input:checked + .wrapper>.weight {
+    background-color: #D91667;
+
+
+
+
+}
+/*.product input:checked + .wrapper:hover>.cardTitleHover {
+    display: block;    
+}
+.product input:checked + .wrapper:hover>.cardTitle {
+    display: none;    
+}
+*/
+
+
+.cardTitleHover {    
+    color: #E62E7A;    
+}
+
+
+
