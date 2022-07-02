@@ -30,17 +30,7 @@ const initialState = [
 export const productSlice = createSlice({
   name: 'products',
   initialState,
-  reducers: {
-    changeStatus: (state, action) => {
-      state.forEach(function (item) {
-        if (item.id === action.payload) {
-          item.status = !item.status;
-        }
-      });
-    },
-  },
+  reducers: {},
 });
-
-export const { changeStatus } = productSlice.actions;
 
 export default productSlice.reducer;
